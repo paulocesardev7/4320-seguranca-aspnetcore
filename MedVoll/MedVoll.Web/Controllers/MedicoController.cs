@@ -38,7 +38,7 @@ namespace MedVoll.Web.Controllers
             return View(PaginaCadastro, dados);
         }
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         [Route("")]
         public async Task<IActionResult> SalvarAsync([FromForm] MedicoDto dados)
         {
